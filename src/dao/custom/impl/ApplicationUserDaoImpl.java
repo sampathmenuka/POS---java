@@ -1,25 +1,36 @@
 package dao.custom.impl;
 
+import dao.CrudUtil;
 import dao.custom.ApplicationUserDao;
 import entity.ApplicationUser;
+import util.passwordManager;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
 public class ApplicationUserDaoImpl implements ApplicationUserDao {
     @Override
-    public void create(ApplicationUser entity) throws IOException {
+    public boolean create(ApplicationUser entity) throws IOException, SQLException,ClassNotFoundException {
+        return CrudUtil.execute(
+                "INSERT INTO application_user VALUES(?,?,?)",
+                entity.getEmail(),
+                entity.getFull_name(),
+                passwordManager.encryptPassword(entity.getPassword())
+        );
 
     }
 
     @Override
-    public void update(ApplicationUser entity) throws IOException {
+    public boolean update(ApplicationUser entity) throws IOException {
+        return false;
 
     }
 
     @Override
-    public void delete(ApplicationUser entity) throws IOException {
+    public boolean delete(ApplicationUser entity) throws IOException {
+        return false;
 
     }
 

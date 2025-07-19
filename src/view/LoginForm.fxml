@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="495.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane fx:id="container" prefHeight="495.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
       <ImageView fitHeight="495.0" fitWidth="861.0" layoutX="-3.0" pickOnBounds="true">
          <image>
@@ -29,17 +25,23 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <TextField layoutX="32.0" layoutY="112.0" prefHeight="35.0" prefWidth="358.0" promptText="User Name" />
-            <TextField layoutX="31.0" layoutY="183.0" prefHeight="35.0" prefWidth="358.0" promptText="Password" />
-            <Button layoutX="72.0" layoutY="253.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="278.0" style="-fx-background-color: #341f97;" text="Log In" textFill="#f7f7f7">
+            <TextField fx:id="txtEmail" layoutX="32.0" layoutY="112.0" prefHeight="35.0" prefWidth="358.0" promptText="User Name" />
+            <TextField fx:id="txtPassword" layoutX="31.0" layoutY="183.0" prefHeight="35.0" prefWidth="358.0" promptText="Password" />
+            <Button layoutX="72.0" layoutY="253.0" mnemonicParsing="false" onAction="#AccessDashboardOnAction" prefHeight="47.0" prefWidth="278.0" style="-fx-background-color: #341f97;" text="Access Dashboard" textFill="#f7f7f7">
                <font>
                   <Font size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button layoutX="70.0" layoutY="360.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="278.0" style="-fx-background-color: #341f97;" text="Create Account" textFill="#f7f7f7">
+            <Button layoutX="70.0" layoutY="360.0" mnemonicParsing="false" onAction="#CreateAccountOnAction" prefHeight="47.0" prefWidth="278.0" style="-fx-background-color: #341f97;" text="Create Account" textFill="#f7f7f7">
                <font>
                   <Font size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Label layoutX="196.0" layoutY="317.0" text="or" textFill="#fcfcfc">
                <font>
